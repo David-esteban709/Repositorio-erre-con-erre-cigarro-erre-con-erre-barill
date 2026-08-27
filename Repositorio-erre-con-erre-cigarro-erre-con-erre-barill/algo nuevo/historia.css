@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('historia\ img.gif'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #e2e8f0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ANIMACIÓN AL CARGAR LA PÁGINA */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.boton {
+    background-color: #38bdf8;
+    color: #020617;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #0284c7;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(56, 189, 248, 0.3);
+}
+
+.boton-full {
+    width: 100%;
+}
+
+.seccion {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    animation: aparecer 1s ease-out;
+}
+
+.titulo {
+    text-align: center;
+    color: #000000bd;
+    font-size: 30px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #38bdf8;
+    margin-bottom: 30px;
+}
+
+.texto-centro {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 17px;
+}
+
+
+.caja-historia {
+    background-color: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 950px;
+    margin: 0 auto 30px auto;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.caja-historia:hover {
+    transform: translateY(-6px);
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4), 0 0 15px rgba(56, 189, 248, 0.2);
+}
+
+.caja-historia p {
+    margin-bottom: 15px;
+    color: #cbd5e1;
+    font-size: 16px;
+    text-align: justify;
+}
+
+.caja-historia p:last-child {
+    margin-bottom: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+
+.tarjeta {
+    background-color: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(56, 189, 248, 0.6);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.25);
+}
+
+.tarjeta h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.pasos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+.caja-paso {
+    background-color: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.caja-paso:hover {
+    transform: translateY(-8px);
+    border-color: rgba(56, 189, 248, 0.6);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.numero {
+    background-color: #38bdf8;
+    color: #020617;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 0 auto 12px;
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+.caja-paso:hover .numero {
+    transform: rotate(360deg) scale(1.1);
+    background-color: #ffffff;
+}
+
+.caja-paso h4 {
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+
+
+
+
+
+.contenedor-volver {
+    max-width: 1000px;
+    margin: 20px ;
+    padding: 0 20px;
+}
+
+.boton-volver {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(30, 41, 59, 0.6);
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+}
+
+.boton-volver:hover {
+    background-color: #38bdf8;
+    color: #020617;
+    transform: translateX(-5px); 
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+}
