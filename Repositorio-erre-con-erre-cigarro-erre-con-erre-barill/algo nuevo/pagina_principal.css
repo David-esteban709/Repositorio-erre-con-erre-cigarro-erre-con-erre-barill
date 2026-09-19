@@ -1,34 +1,29 @@
-/* RESETEO BÁSICO DE MÁRGENES */
+/* RESETEO BÁSICO */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden; 
+    overflow-x: hidden;
+    overflow-y: auto; /* Permite hacer scroll hacia la sección de abajo */
     width: 100%;
-    height: 100%;
     font-family: Arial, sans-serif;
     color: white;
-}
-
-
-body {
     background-color: #111;
 }
 
-
+/* MENÚ FIX */
 #menu {
     width: 100%;
     background: rgba(0, 0, 0, 0.8);
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 100;
 }
 
 #menu ul {
@@ -70,7 +65,7 @@ body {
     width: 180px;
 }
 
-
+/* SLIDER INTACTO */
 .slider-container {
     display: flex;           
     width: 100vw;
@@ -78,7 +73,6 @@ body {
     overflow-x: hidden;     
     scroll-behavior: smooth;  
 }
-
 
 .pantalla {
     min-width: 100vw;         
@@ -89,7 +83,6 @@ body {
     box-sizing: border-box;
     padding: 20px;
 }
-
 
 #texto {
     max-width: 850px;
@@ -102,7 +95,6 @@ body {
     border-radius: 15px;
     animation: aparecer 2s ease;
 }
-
 
 @keyframes aparecer {
     from {
@@ -119,16 +111,12 @@ a {
     transition: 0.3s;
 }
 
-
-
-
 .pagina-inicio {
     background-image: url('fondo1.gif');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
-
 
 .pagina-servicios {
     background-image: url('fondos2.gif'); 
@@ -137,7 +125,6 @@ a {
     background-attachment: fixed;
 }
 
-
 .pagina-contacto {
     background-image: url('fondo3.gif'); 
     background-size: cover;
@@ -145,36 +132,24 @@ a {
     background-attachment: fixed;
 }
 
-
 .contenido-seccion {
     display: flex;
     flex-direction: column;   
     align-items: center;      
-    margin-left:40px;
     width: 100%;
     max-width: 1200px;
-    margin:20px;
     gap: 35px;               
     padding: 20px;
-
 }
 
-
-#texto {
-    max-width: 850px;
-    width: 100%;
-}
-
-
+/* TARJETAS ORIGINALES RESTAURADAS */
 .contenedor-tarjetas {
     display: flex;
     justify-content: center;
     gap: 20px;               
     width: 100%;
     max-width: 1050px;
-
 }
-
 
 .tarjeta-info {
     background: rgba(8, 10, 15, 0.65);         
@@ -185,7 +160,6 @@ a {
     backdrop-filter: blur(8px);                
 }
 
-
 .tarjeta-imagen {
     width: 100%;
     height: 140px;                            
@@ -195,7 +169,6 @@ a {
     background: rgba(255, 255, 255, 0.04);      
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
-
 
 .tarjeta-imagen img {
     width: 100%;
@@ -215,14 +188,12 @@ a {
     text-shadow: 0 0 8px rgba(0, 210, 255, 0.3); 
 }
 
-
 .tarjeta-info p {
     color: #b0c4de;                             
     font-size: 15px;
     line-height: 1.35;
     margin: 0;
 }
-
 
 .tarjeta-info:hover {
     transform: translateY(-6px);              
@@ -231,7 +202,175 @@ a {
     background: rgba(12, 16, 24, 0.75);         
 }
 
-
 .tarjeta-info:hover .tarjeta-imagen img {
     transform: scale(1.08);
+}
+
+
+
+
+
+
+
+
+/* =========================================================
+   NUEVA SECCIÓN DEBAJO DEL SLIDER (FOTO DE FONDO Y CAJAS)
+   ========================================================= */
+.seccion-abajo {
+    width: 100%;
+    min-height: 80vh;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('pixell\ \(1\).jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.contenido-abajo {
+    width: 100%;
+    max-width: 1050px;
+    text-align: center;
+}
+
+.contenido-abajo h2 {
+    font-family: 'Cinzel', 'Segoe UI', sans-serif;
+    color: #00d2ff;
+    font-size: 26px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.4);
+    opacity: 0;
+    animation: entradaDesdeArriba 0.8s ease-out forwards;
+}
+
+/* Contenedores por fila */
+.contenedor-cajas-nuevas {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+/* Fila 1: 3 cajas iguales */
+.fila-3 .caja-opaca {
+    flex: 1;
+    opacity: 0;
+    animation: entradaDesdeAbajo 0.8s ease-out 0.2s forwards;
+}
+
+/* Fila 2: 2 cajas más anchas */
+.fila-2 .caja-opaca {
+    flex: 1;
+    opacity: 0;
+    animation: entradaConEscala 0.8s ease-out 0.5s forwards;
+}
+
+/* Fila 3: 1 caja que ocupa todo el ancho */
+.fila-1 .caja-opaca {
+    flex: 1;
+    width: 100%;
+    opacity: 0;
+    animation: entradaBrillo 1s ease-out 0.8s forwards;
+}
+
+/* ESTILOS DE LA CAJA Y SU TRANSICIÓN HOVER */
+.caja-opaca {
+    background: rgba(8, 10, 15, 0.75);
+    border: 1px solid rgba(0, 210, 255, 0.25);
+    border-radius: 12px;
+    padding: 30px 25px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    
+    /* Transición suave para el elevamiento al pasar el cursor */
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+.caja-opaca h3 {
+    color: #00d2ff;
+    font-size: 18px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.caja-opaca p {
+    color: #b0c4de;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* ANIMACIÓN AL PASAR EL CURSOR (HOVER) */
+.caja-opaca:hover {
+    transform: translateY(-8px) !important; /* Se eleva 8px */
+    border-color: rgba(0, 210, 255, 0.7);
+    box-shadow: 0 12px 30px rgba(0, 210, 255, 0.25);
+}
+
+/* ANIMACIONES KEYFRAMES DE ENTRADA */
+@keyframes entradaDesdeArriba {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes entradaDesdeAbajo {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes entradaConEscala {
+    0% {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes entradaBrillo {
+    0% {
+        opacity: 0;
+        border-color: rgba(0, 210, 255, 0);
+        box-shadow: 0 0 0 rgba(0, 210, 255, 0);
+    }
+    50% {
+        opacity: 0.5;
+        border-color: rgba(0, 210, 255, 0.8);
+        box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
+    }
+    100% {
+        opacity: 1;
+        border-color: rgba(0, 210, 255, 0.25);
+        box-shadow: none;
+    }
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .contenedor-cajas-nuevas {
+        flex-direction: column;
+    }
 }
