@@ -170,25 +170,38 @@ body {
 
 /* FOOTER SOLICITADO */
 .pagina {
-    background-color: #2a363b;
-    color: #ffffff;
+    background: #07080a;
+    color: #d8dce0;
     text-align: center;
-    padding: 40px 0;
-    margin-top: 60px;
+    padding: 35px 20px;
+    margin-top: 50px;
+    border-top: 1px solid #20252a;
+    box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.5);
 }
 
 .enlace-volver {
-    color: #3498db;
+    display: inline-block;
+    padding: 12px 28px;
+    color: #ffffff;
+    background: #101419;
+    border: 1px solid #30363c;
+    border-radius: 4px;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     transition: all 0.3s ease;
 }
 
 .enlace-volver:hover {
-    color: #2ecc71;
-    text-decoration: underline;
+    background: #151a1f;
+    border-color: #a855f7; /* Borde morado neón */
+    color: #d8b4fe;        /* Texto morado claro brillante */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6), 0 0 15px rgba(168, 85, 247, 0.4); /* Resplandor morado */
+    text-decoration: none;
 }
-
 /* RESPONSIVO MÓVIL Y TABLETA */
 @media (max-width: 900px) {
     .contenedor-servicios-grid {
